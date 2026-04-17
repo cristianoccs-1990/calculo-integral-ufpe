@@ -1,0 +1,284 @@
+/* ==============================================
+   Dashboard Matematica — Derivadas, Exp, Log
+   Identidade UFPE Bordo · Pantone 201C (#9B2335)
+   FONTE AMPLIADA — Aula presencial sala grande
+   ============================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  background: #f4f4f6;
+  margin: 0; padding: 0;
+}
+
+/* -- Navbar -- */
+.navbar {
+  background-color: #9B2335 !important;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.navbar .nav-link {
+  color: rgba(255,255,255,.85) !important;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: 8px 12px !important;
+}
+.navbar .nav-link:hover, .navbar .nav-link.active {
+  color: #fff !important;
+  background: rgba(255,255,255,.12);
+  border-bottom: 2px solid #D4A04A;
+}
+.navbar-brand { font-size: 16px !important; font-weight: 700 !important; }
+
+/* -- Conteudo principal -- */
+.main-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 24px 28px 40px;
+}
+
+/* -- Titulos (AMPLIADOS) -- */
+h3 { color: #7A1A28; font-size: 32px; font-weight: 700; margin: 0 0 18px; }
+h4 { color: #7A1A28; font-size: 26px; font-weight: 700; margin: 18px 0 12px; }
+h5 { color: #9B2335; font-size: 22px; font-weight: 600; margin: 14px 0 10px; }
+h6 { color: #9B2335; font-size: 18px; font-weight: 600; margin: 10px 0 6px; }
+
+/* -- Cards -- */
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+.card-header {
+  background: #9B2335;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 14px 22px;
+  border-radius: 8px 8px 0 0 !important;
+}
+.card-body {
+  padding: 18px 22px;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* -- Conceito / Destaque -- */
+.conceito-box {
+  border-left: 5px solid #9B2335;
+  background: #fdf2f3;
+  padding: 16px 22px;
+  margin: 18px 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* -- Equacao destaque -- */
+.eq-box {
+  border-left: 5px solid #D4A04A;
+  background: #fdf9ee;
+  padding: 16px 22px;
+  margin: 18px 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+/* -- KPIs (AMPLIADOS) -- */
+.kpi-box {
+  text-align: center;
+  padding: 20px 14px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+.kpi-value {
+  font-size: 40px;
+  font-weight: 800;
+  color: #9B2335;
+  line-height: 1.2;
+}
+.kpi-label {
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-top: 4px;
+}
+
+/* -- Tabelas (AMPLIADAS) -- */
+.table { font-size: 16px; }
+.table thead th {
+  background: #9B2335;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 14px;
+  border: none;
+  white-space: nowrap;
+}
+.table td {
+  padding: 8px 14px;
+  border-color: #eee;
+  vertical-align: middle;
+}
+.table-striped tbody tr:nth-of-type(odd) { background: #fdf6f7; }
+
+/* -- Footer -- */
+.footer-text {
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+  padding: 16px 0;
+  border-top: 1px solid #e8e8e8;
+  margin-top: 24px;
+}
+
+/* -- Graficos -- */
+.graph-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  padding: 10px;
+  margin-bottom: 22px;
+}
+
+/* -- Caixas Mario World (AMPLIADAS) -- */
+.mario-details { margin: 12px 0; }
+.mario-details > summary { list-style: none; cursor: pointer; }
+.mario-details > summary::-webkit-details-marker { display: none; }
+.mario-details > summary::marker { display: none; content: ""; }
+
+/* Caixa ? — perguntas e exercicios */
+.mario-question {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #D4A04A 0%, #c4903a 100%);
+  border: 3px solid #8B6914;
+  border-radius: 8px;
+  padding: 16px 22px;
+  box-shadow: 0 3px 8px rgba(139,105,20,.25), inset 0 1px 0 rgba(255,255,255,.3);
+  transition: transform .15s, box-shadow .15s;
+  width: 100%;
+}
+.mario-details > summary:hover .mario-question {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(139,105,20,.35), inset 0 1px 0 rgba(255,255,255,.3);
+}
+.mario-details[open] > summary .mario-question { border-radius: 8px 8px 0 0; }
+.mario-question-icon {
+  font-size: 30px; font-weight: 900; color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+  background: #8B6914; border-radius: 50%;
+  min-width: 48px; width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.mario-question-text {
+  font-size: 18px; color: #fff; font-weight: 600;
+  line-height: 1.5; text-shadow: 0 1px 1px rgba(0,0,0,.15);
+}
+.mario-answer {
+  background: #fdf6e3;
+  border: 2px solid #D4A04A; border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 18px 22px; font-size: 17px; line-height: 1.75; color: #333;
+  animation: marioSlideDown .25s ease-out;
+}
+.mario-answer strong { color: #8B6914; }
+
+/* Caixa ! — demonstracoes algebricas */
+.mario-code {
+  display: flex; align-items: center; gap: 14px;
+  background: linear-gradient(135deg, #4a9b23 0%, #3a8b18 100%);
+  border: 3px solid #2d6b10; border-radius: 8px;
+  padding: 12px 18px; width: 100%;
+  box-shadow: 0 3px 8px rgba(45,107,16,.2), inset 0 1px 0 rgba(255,255,255,.25);
+  transition: transform .15s, box-shadow .15s;
+}
+.mario-details > summary:hover .mario-code {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(45,107,16,.3), inset 0 1px 0 rgba(255,255,255,.25);
+}
+.mario-details[open] > summary .mario-code { border-radius: 8px 8px 0 0; }
+.mario-code-icon {
+  font-size: 24px; font-weight: 900; color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+  background: #2d6b10; border-radius: 50%;
+  min-width: 38px; width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.mario-code-text {
+  font-size: 16px; color: #fff; font-weight: 600; line-height: 1.4;
+}
+.mario-code-detail {
+  background: #f0f7ea;
+  border: 2px solid #4a9b23; border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 18px 20px; font-size: 17px; line-height: 1.75; color: #333;
+  animation: marioSlideDown .25s ease-out;
+}
+
+@keyframes marioSlideDown {
+  from { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+  to   { opacity: 1; max-height: 4000px; }
+}
+
+/* -- MathJax (AMPLIADO) -- */
+.MathJax { font-size: 140% !important; }
+mjx-container[display="true"] {
+  margin: 14px 0 !important;
+}
+
+/* -- Slider labels -- */
+.rc-slider-mark-text { font-size: 14px !important; }
+
+/* -- Resultado interativo -- */
+.resultado-box {
+  background: #e8f5e9;
+  border-left: 5px solid #41801d;
+  padding: 14px 20px;
+  margin: 14px 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+/* -- Alerta / Observacao -- */
+.obs-box {
+  background: #fff3e0;
+  border-left: 5px solid #e65100;
+  padding: 14px 20px;
+  margin: 14px 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* -- Responsivo -- */
+@media (max-width: 1024px) {
+  .main-content { padding: 18px; }
+  h3 { font-size: 26px; }
+  .card-body { font-size: 16px; }
+  .kpi-value { font-size: 32px; }
+}
+@media (max-width: 768px) {
+  .navbar .nav-link { font-size: 11px; padding: 6px 6px !important; }
+  .main-content { padding: 12px; }
+  .kpi-value { font-size: 26px; }
+  body { font-size: 16px; }
+}
